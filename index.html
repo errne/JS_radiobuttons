@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Reading List App</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+  <script src="js/app.js"></script>
+</head>
+<body>
+  <form id="quiz-form">
+  <p>Please choose quiz category:</p>
+  <div>
+    <input type="radio" id="contactChoice1"
+           name="question" value="Geo">
+    <label for="contactChoice1">Geography</label>
+    <input type="radio" id="contactChoice2"
+           name="question" value="Ast">
+    <label for="contactChoice2">Astronomy</label>
+    <input type="radio" id="contactChoice3"
+           name="question" value="His">
+    <label for="contactChoice3">History</label>
+    <input type="radio" id="contactChoice3"
+           name="question" value="Spo">
+    <label for="contactChoice4">Sports</label>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<pre id="log">
+</pre>
+
+  <form id="new-item-form">
+    <div id="form-wrapper">
+      <div class="form-item">
+        <label for="answer" class="primary">Your asnwer:</label>
+        <input type="text" id="answer" required/>
+      </div>
+
+
+    </div>
+    <input type="submit" value="save"/>
+  </form>
+
+  <button id="delete-all">Delete All</button>
+
+  <h1>Answer List</h1>
+<div id="answer-list"></div>
+
+
+</body>
+</html>
