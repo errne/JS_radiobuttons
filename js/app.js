@@ -24,37 +24,44 @@ const handleNewItemFormSubmit = function (event) {
   event.target.reset();
 }
 
-const geoQ1 = {question: "What is", answer: "That"};
-const geoQ = [geoQ1];
 const geoList = [
-{question: "What is the capitol of Finland?", answer: "Helsinki"},
-{question: "What is the capitol of Italy?", answer: "Rome"},
-{question: "What is the capitol of Latvia?", answer: "Riga"},
+  {question: "What is the capitol of Finland?", answer: "Helsinki"},
+  {question: "What is the capitol of Italy?", answer: "Rome"},
+  {question: "What is the capitol of Latvia?", answer: "Riga"},
 ];
 const astroList = [
   {question: "What is the name of Saturns largest moon?", answer: "Titan"},
   {question: "What is the largest known Galaxy?", answer: "IC1101"},
   {question: "How long is a year on Mercury in days", answer: "88"},
 ];
-
+const histoList = [
+  {question: "Which year name Lithuania was mentioned first?", answer: "1009"},
+  {question: "What country was in crown union with Lithuania", answer: "Poland"},
+  {question: "In which year Kaunas gained city status", answer: "1408"},
+];
+const sportList = [
+  {question: "What city's team finished 3rd in last years Euroleague?", answer: "Kaunas"},
+  {question: "Who scored most goals in world cup (surname)", answer: "Klose"},
+  {question: "Basketball, how many players there are on the court from one team?", answer: "5"},
+];
 
 const handleRadioSubmit = function(event) {
   event.preventDefault();
   const da = (event.target.question.value);
-  console.log(da);
   if (da === "Geo"){
     tempQ = geoList.sample();
     log.innerText = tempQ.question;
   } else if (da === "Ast") {
     tempQ = astroList.sample();
     log.innerText = tempQ.question;
-
   } else if (da === "His") {
-    log.innerText = geoQ[0].question;
-    tempQ = geoQ[0];
+    tempQ = histoList.sample();
+    log.innerText = tempQ.question;
+  } else if (da === "Sport") {
+    tempQ = sportList.sample();
+    log.innerText = tempQ.question;
   } else {
-    log.innerText = "When was first modern Olympics held?";
-    tempQ = "When was first modern Olympics held?";
+    log.innerText = "Please first select the category";
   }
   event.target.reset();
 }
@@ -76,6 +83,7 @@ const createAnswerListItem = function (form) {
     correct.textContent = "Correct";
   } else {
     correct.textContent = "Wrong";
+    answerListItem.classList = 'answer-list-item-wrong';
   }
   answerListItem.appendChild(correct);
 
