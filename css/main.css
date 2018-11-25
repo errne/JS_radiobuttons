@@ -1,12 +1,22 @@
 
 body {
   margin: 50px;
+  font-size: 18px;
   font-family: fantasy;
   background: linear-gradient(to left, #abbaab, #ffffff);
 }
 
 h1 {
   text-align: center;
+}
+
+#delete-all {
+  float: right;
+  padding: 5px;
+  color: fff;
+  background: orange;
+  border-radius: 5%;
+  margin-bottom: 10px;
 }
 
 #form-wrapper {
